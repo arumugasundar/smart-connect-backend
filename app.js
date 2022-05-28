@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const auth = require('./routes/auth');
+const dashboard = require('./routes/dashboard');
 
 const app = express();
 const MONGO_DB_URL = process.env.MONGO_DB_URL;
@@ -33,5 +34,6 @@ app.get('/', (req,res,next) => {
 });
 
 app.use('/api/auth',auth);
+app.use('/api/dashboard',dashboard);
 
 module.exports = app;
